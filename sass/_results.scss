@@ -1,0 +1,63 @@
+.main-results {
+  width: 100%;
+  @include flexCenter;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.card {
+  width: 22%;
+  min-width: 150px;
+  min-height: 100px;
+  background: transparent;
+  color: $header-color;
+  font-size: 1rem;
+  padding: 1em;
+  margin: 0.25em;
+  outline: 0;
+  position: relative;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.card:hover,
+.card:focus {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  box-shadow: $shadow;
+}
+
+.card-front {
+  background: $card-bg;
+  @include flexCenter;
+}
+
+.card-back {
+  background: $header-color;
+  color: $header-bg;
+  transform: rotateY(180deg);
+  @include flexCenter;
+}
+
+@include mq(768px) {
+  .card {
+    width: 300px;
+    font-size: 2rem;
+  }
+}
+
+@include mq(1200px) {
+  .card {
+    width: 350px;
+    height: 175px;
+  }
+}

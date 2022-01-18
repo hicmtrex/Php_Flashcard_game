@@ -1,0 +1,48 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header,
+.footer {
+  background: $header-bg;
+  color: $header-color;
+  font-size: 0.5rem;
+  width: 100%;
+  min-height: 60px;
+  text-align: center;
+}
+
+.title-break {
+  display: block;
+}
+
+.footer {
+  position: fixed;
+  top: calc(100vh - 60px);
+  left: 0;
+  @include flexCenter;
+  font-size: 0.6rem;
+}
+
+.header a,
+.footer a {
+  color: $header-color;
+  text-decoration: none;
+}
+
+@include mq(768px) {
+  .header {
+    font-size: 1rem;
+  }
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
+@include mq(1024px) {
+  .title-break {
+    display: none;
+  }
+}
